@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jTD-rF-wIY">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jTD-rF-wIY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="edT-Gr-7Uf">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="edT-Gr-7Uf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1i-IZ-PgJ">
                                 <rect key="frame" x="153" y="583" width="69" height="64"/>
@@ -34,12 +33,19 @@
                                     <constraint firstAttribute="height" constant="64" id="YRY-uO-f5j"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="camera"/>
+                                <connections>
+                                    <action selector="onCamera:" destination="ghP-Ww-KKQ" eventType="touchUpInside" id="kmZ-vM-f2i"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ufw-e1-uLx" firstAttribute="top" secondItem="h1i-IZ-PgJ" secondAttribute="bottom" constant="20" id="BdK-qS-CVa"/>
+                            <constraint firstItem="edT-Gr-7Uf" firstAttribute="top" secondItem="vrG-Wc-0bn" secondAttribute="bottom" id="NqK-D1-N9a"/>
+                            <constraint firstAttribute="trailing" secondItem="edT-Gr-7Uf" secondAttribute="trailing" id="X1Y-08-STs"/>
                             <constraint firstItem="h1i-IZ-PgJ" firstAttribute="centerX" secondItem="Lxe-6f-KEH" secondAttribute="centerX" id="f1b-Zr-PgS"/>
+                            <constraint firstItem="ufw-e1-uLx" firstAttribute="top" secondItem="edT-Gr-7Uf" secondAttribute="bottom" id="fbK-3n-2IR"/>
+                            <constraint firstItem="edT-Gr-7Uf" firstAttribute="leading" secondItem="Lxe-6f-KEH" secondAttribute="leading" id="u4i-BO-fdW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aPF-0T-Ydb"/>
@@ -97,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="66" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8nY-cI-ARj" id="kg8-aL-hL3">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="60.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-oN-H0f">

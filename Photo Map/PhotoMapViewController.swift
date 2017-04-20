@@ -51,7 +51,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let edittedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         pickedImage = originalImage
         dismiss(animated: true) { 
@@ -63,16 +63,16 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         locationsViewController.delegate = self
     }
     
-    func addPin() {
+    func addPin(lat: NSNumber, lng: NSNumber) {
         let annotation = MKPointAnnotation()
-        let locationCoordinate = CLLocationCoordinate2D(latitude: 37.779560, longitude: -122.393027)
+        let locationCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lng))
         annotation.coordinate = locationCoordinate
         annotation.title = String(describing: locationCoordinate.latitude)
         mapView.addAnnotation(annotation)
     }
     
     func locationsPickedLocation(controller: LocationsViewController, latitude: NSNumber, longitude: NSNumber) {
-        addPin()
+        addPin(lat: latitude, lng: longitude)
     }
     
     
